@@ -7,16 +7,157 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+section{
+    background-color: rgb(245, 245,245);
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.click{
+    transition: all 300ms ease;
+}
+
+.click:hover{
+    transform: scale(1.1);
+}
+
+.click:active{
+    transform: scale(0.8);
+}
+
+.title{
+    font-size: 76px;
+    margin-bottom: 12px;
+    text-align: left;
+    line-height: 1;
+}
+
+button{
+    cursor: pointer;
+}
+
+p{
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.blue{
+    color: #130ce1
+}
+
+/* 
+
+Landing Page
+
+*/
+
+#landing--page{
+    min-height: 100vh;
+}
+
+.header{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 30px;
+}
+
+.header__para{
+    font-size: 24px;
+    line-height: 2;
+    max-width: 450px;
+}
+
+.social__list{
+    margin-top: 16px;
+    display: flex;
+}
+
+.social__link{
+    background-color: #130ce1;
+    border-radius: 50%;
+    color: #fff;
+    padding: 4px;
+    margin: 12px 12px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.mail__btn{
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: #242424;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    bottom: 32px;
+    right: 40px;
+}
+
+.scroll{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll__icon{
+    width: 20px;
+    height: 30px;
+    border: 2px solid #242424;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll__icon:after{
+   content: "";
+   width: 4px;
+   height: 6px;
+   background-color: #242424;
+   border-radius: 2px;
+   animation: scroll 1000ms infinite alternate-reverse;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(3px)
+    }
+
+    100% {
+        transform: translateY(-3px)
+    }
+}
+
 /* 
 
 Navigation
 
 */
 
-a{
-    text-decoration: none;
-    color: black;
-}
 
 nav{
     display: flex;
@@ -26,6 +167,7 @@ nav{
     max-width: 1200px;
     align-items: center;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .nav__link--list{
@@ -54,9 +196,3 @@ nav{
 .fa-solid{
     font-size: 20px;
 }
-
-/* 
-
-Landing 
-
-*/
