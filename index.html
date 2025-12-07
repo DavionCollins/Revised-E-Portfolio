@@ -25,9 +25,9 @@
                 <img class="nav__logo--img" src="Revised__E-Portfolio/assets/Davion Collins Logo.png" alt="icon">
             </figure>
             <ul class="nav__link--list">
-                <li class="nav__link"><a class="nav__link--anchor link__hover-effect link__hover-effect--black" href = "">About</a></li>
-                <li class="nav__link"><a class="nav__link--anchor link__hover-effect link__hover-effect--black" href = "">Projects</a></li>
-                <li class="nav__link"><a class="nav__link--anchor link__hover-effect link__hover-effect--black" href = "">Contact</a></li>
+                <li class="nav__link" ><a class="nav__link--anchor link__hover-effect link__hover-effect--black" href="#header" onclick="toggleModal()">About</a></li>
+                <li class="nav__link"><a class="nav__link--anchor link__hover-effect link__hover-effect--black" href = "#projects">Projects</a></li>
+                <li class="nav__link"><a class="nav__link--anchor link__hover-effect link__hover-effect--black" href = "mailto:davioncollins3461@gmail.com">Contact</a></li>
                 <li class="nav__link click"><a class="nav__link--anchor link__hover-effect link__hover-effect--black" href = ""><i class="fa-solid fa-circle-half-stroke"></i></a></li>
             </ul>
         </nav>
@@ -36,7 +36,7 @@
                 <h1 class="title">Hey</h1>
                 <h1 class="title blue">I'm Davion.</h1>
                 <p class="header__para">I'm a <b class="blue">Frontend Software Engineer</b> with a passion for building web applications with great user experiences.
-                <br>Here's more <b class="blue">about me</b>.</p>
+                <br>Here's more <b class="blue click" onclick="toggleModal()">about me</b>.&nbsp;<i class="fa-solid fa-arrow-left"></i></p>
                 <div class="social__list">
                     <a href="https://www.linkedin.com/in/davion-collins-791651396/" target="_blank" class="social__link click"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="https://github.com/DavionCollins" target="_blank" class="social__link click"><i class="fa-brands fa-github"></i></a>
@@ -44,7 +44,7 @@
                 </div>
             </div>
         </header>
-        <a href="mailto:davioncollins3461@gmail.com"><button class="mail__btn click"><i class="fa-solid fa-envelope"></i></button></a>
+        <button class="mail__btn click" onclick="toggleModal()"><i class="fa-solid fa-envelope"></i></button>
         <a href="#projects" class="scroll"><div class="scroll__icon click"></div></a>
         <div class="modal">
             <div class="modal__half modal__about">
@@ -59,6 +59,7 @@
                 </div>
             </div>
             <div class="modal__half modal__contact">
+                <i class="fa-solid fa-times modal__exit click" onclick="toggleModal()"></i>
                 <h3 class="modal__title modal__title--contact">Let's have a chat</h3>
                 <h4 class="modal__subtitle modal__subtitle--contact">I'd love to hear from you</h4>
                 <form id="contact__form" onsubmit="contact(event)">
@@ -77,11 +78,11 @@
                     <button id="contact__submit" class="form__submit">Send</button>
                 </form>
                 <div class="modal__overlay modal__overlay--loading">
-                    <i class="fa-solid fa-spinner"></i>
+                    <i class="fa-solid fa-spinner fa-spinner--visible"></i>
                 </div>
                 <div class="modal__overlay modal__overlay--success">Thanks for the message! Looking forward to speaking to you.</div>
             </div>
-            <i class="fa-solid fa-times modal__exit click"></i>
+            
         </div>
     </section>
     <section id="projects">

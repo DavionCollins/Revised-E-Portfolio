@@ -138,6 +138,24 @@ label {
     font-weight: bold;
 }
 
+nav, .scroll, .header {
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms;
+}
+
+.modal--open nav,
+.modal--open .scroll,
+.modal--open .header {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms ease-in-out;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
 /* 
 
 Landing Page
@@ -233,6 +251,10 @@ Landing Page
     }
 }
 
+.fa-arrow-left {
+    color: #2f14e1;
+}
+
 /* 
 
 Navigation
@@ -266,8 +288,8 @@ nav{
 }
 
 .logo__img--wrapper{
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -299,6 +321,9 @@ MODAL
     border-radius: 20px;
     overflow: hidden;
     display: flex;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 1s, z-index 1s, box-shadow 0.5s ease-out;
 }
 
 .modal__half {
@@ -308,10 +333,18 @@ MODAL
     padding: 40px 72px;
     justify-content: center;
     position: relative;
+    transition: all 300ms ease-in;
 }
+
+.modal--open .modal__about,
+.modal--open .modal__contact {
+    transform: translateX(0%);
+}
+
 
 .modal__about {
     background-color: rgb(245, 245, 245);
+    transform: translateX(-110%);
 }
 
 .modal__languages {
@@ -352,6 +385,7 @@ MODAL
 .modal__contact {
     background-color: #242424;
     color: white;
+    transform: translateX(110%);
 }
 
 .modal__title {
@@ -405,7 +439,7 @@ MODAL
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: -1;
@@ -421,17 +455,20 @@ MODAL
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
+    display: none;
 }
 
 .modal__overlay--visible {
     z-index: 1;
+    display: flex;
 }
 
 .fa-spinner {
     font-size: 80px;
     animation: spinner 750ms infinite linear;
-
 }
+
 
 @keyframes spinner {
     0% {
@@ -458,6 +495,13 @@ MODAL
     font-size: 26px;
     z-index: 100;
     color: #fff;
+}
+
+.modal--open .modal{
+    z-index: 60;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
+    opacity: 1;
+    visibility: visible;
 }
 
 /* 
@@ -568,6 +612,10 @@ footer{
 .footer__social--link,
 .footer__copyright {
     color: white;
+}
+
+.footer__copyright {
+    margin-top: 12px;
 }
 
 .footer__social--list {
